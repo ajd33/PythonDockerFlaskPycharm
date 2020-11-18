@@ -4,3 +4,5 @@ This is a homework assignment to teach how to get Pycharm setup with Docker, Fla
 ![postman request output](screenshots/postmanhw2.png)
 # SQL Data Screenshot
 ![pycharm data query](screenshots/queryhw2.png)
+# HTML Table Screenshot
+![HTML Table](screenshots/formattedtable.png)
