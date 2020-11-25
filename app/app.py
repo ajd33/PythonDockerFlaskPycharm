@@ -14,7 +14,7 @@ class MyDb:
             'password': 'root',
             'host': 'db',
             'port': '3306',
-            'database': 'deniroData'
+            'database': 'FordEscortData'
         }
         self.connection = mysql.connector.connect(**config)
 
@@ -23,30 +23,30 @@ class MyDb:
 
     def get_alldata(self):
         cursor = self.connection.cursor(dictionary=True)
-        cursor.execute('SELECT * FROM deniro')
+        cursor.execute('SELECT * FROM ford_escort')
         return cursor.fetchall()
 
     def get_rating(self, rating_id):
         cursor = self.connection.cursor(dictionary=True)
-        cursor.execute('SELECT * FROM deniro WHERE id=%s', (rating_id,))
+        cursor.execute('SELECT * FROM ford_escort WHERE id=%s', (rating_id,))
         result = cursor.fetchall()
         return result[0]
 
     def update_rating(self, inputData):
         cursor = self.connection.cursor(dictionary=True)
-        sql_update_query = """UPDATE deniro t SET t.Year = %s, t.Score = %s, t.Title = %s WHERE t.id = %s """
+        sql_update_query = """UPDATE ford_escort t SET t.Year = %s, t.Score = %s, t.Title = %s WHERE t.id = %s """
         cursor.execute(sql_update_query, inputData)
         self.connection.commit()
 
     def insert_rating(self, inputData):
         cursor = self.connection.cursor(dictionary=True)
-        sql_insert_query = """INSERT INTO deniro (`Year`,Score,Title) VALUES (%s, %s, %s) """
+        sql_insert_query = """INSERT INTO ford_escort (`Year`,Score,Title) VALUES (%s, %s, %s) """
         cursor.execute(sql_insert_query, inputData)
         self.connection.commit()
 
     def delete_rating(self, rating_id):
         cursor = self.connection.cursor(dictionary=True)
-        sql_delete_query = """DELETE FROM deniro WHERE id = %s """
+        sql_delete_query = """DELETE FROM ford_escort WHERE id = %s """
         cursor.execute(sql_delete_query, (rating_id,))
         self.connection.commit()
 
@@ -111,8 +111,7 @@ def api_retrieve(rating_id) -> str:
 
 @app.route('/api/v1/ratings/', methods=['POST'])
 def api_add() -> str:
-    content = request.json
-    inputData = (content['Year'], content['Score'], content['Title'])
+    inputData = (request.form.get('Year'), request.form.get('Score'), request.form.get('Title'))
     db.insert_rating(inputData)
     resp = Response(status=200, mimetype='application/json')
     return resp
@@ -120,14 +119,13 @@ def api_add() -> str:
 
 @app.route('/api/v1/ratings/<int:rating_id>', methods=['PUT'])
 def api_edit(rating_id) -> str:
-    content = request.json
-    inputData = (content['Year'], content['Score'], content['Title'], rating_id)
+    inputData = (request.form.get('Year'), request.form.get('Score'), request.form.get('Title'), rating_id)
     db.update_rating(inputData)
     resp = Response(status=201, mimetype='application/json')
     return resp
 
 
-@app.route('/api/v1/ratings/<int:rating_id>', methods=['DELETE'])
+@app.route('/api/ratings/<int:rating_id>', methods=['DELETE'])
 def api_delete(rating_id) -> str:
     db.delete_rating(rating_id)
     resp = Response(status=210, mimetype='application/json')
