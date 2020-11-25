@@ -5,7 +5,7 @@ from flask import Flask, request, Response, redirect
 from flask import render_template
 
 app = Flask(__name__)
-user = {'username': 'Wenbo Wang'}
+user = {'username': 'Andrew Drumm'}
 
 class MyDb:
     def __init__(self):

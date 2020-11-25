@@ -1,47 +1,32 @@
 {% extends "layout.html" %}
 {% block content %}
-<form action="/cities/new" method="POST">
-    <div class="row">
-        <div class="col">
-            <label for="fldName">City Name</label>
-            <input id="fldName" type="text" class="form-control" placeholder="City Name" name="fldName">
-        </div>
-        <div class="col">
-            <label for="fldAbbreviation">City Abbreviation</label>
-            <input id="fldAbbreviation" t ype="text" class="form-control" placeholder="City Abbreviation"
-                   name="fldAbbreviation">
-        </div>
-        <div class="col">
-            <label for="fldCountry">City Country</label>
-            <input id="fldCountry" type="text" class="form-control" placeholder="City Country" name="fldCountry">
-        </div>
-    </div>
 
-    <div class="row">
-        <div class="col">
-            <label for="fldLat">City Latitude</label>
-            <input id="fldLat" type="text" class="form-control" placeholder="City Latitude" name="fldLat">
-        </div>
-        <div class="col">
-            <label for="fldlong">City Longitude</label>
-            <input id="fldlong" type="text" class="form-control" placeholder="City Longitude" name="fldLong">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <label for="fldCapitalStatus">Capital Status</label>
+<h5 class="card-title" style="margin-top: 20px">New Rating</h5>
 
-            <input id="fldCapitalStatus" type="text" class="form-control" placeholder="Capital Status "
-                   name="fldCapitalStatus">
-        </div>
-        <div class="col">
-            <label for="fldPopulation">City Population</label>
-            <input id="fldPopulation" type="text" class="form-control" placeholder="Population" name="fldPopulation">
-        </div>
+<form action="/rating/new" method="post">
+
+  <div class="form-group row">
+    <label for="Year" class="col-sm-2 col-form-label">Year</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="Year" name="Year" placeholder="Year">
     </div>
-    <button type="submit" class="btn btn-success">Success</button>
+  </div>
+
+  <div class="form-group row">
+    <label for="Score" class="col-sm-2 col-form-label">Score</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="Score" name="Score" placeholder="Score">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="Title" class="col-sm-2 col-form-label">Title</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="Title" name="Title" placeholder="Title">
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-success">Save</button>
 
 </form>
-
 {% endblock %}
-
