@@ -1,22 +1,27 @@
 {% extends "layout.html" %}
 {% block content %}
-<h2 style="margin-top: 20px">Rotten Tomato ratings of movies with Robert De Niro.</h2>
-<table class="table" style="margin-top: 20px">
+<table class="table">
     <thead>
     <tr>
-        <th scope="col">No.</th>
-        <th scope="col">Year</th>
-        <th scope="col">Score</th>
-        <th scope="col">Title</th>
+        <th scope="col">City Name</th>
+        <th scope="col">Latitude</th>
+        <th scope="col">Longitude</th>
+        <th scope="col">Country</th>
+        <th scope="col">Abbreviation</th>
+        <th scope="col">Capital Status</th>
+        <th scope="col">Population</th>
     </tr>
     </thead>
     <tbody>
-    {% for d in deniro %}
+    {% for city in cities %}
     <tr>
-        <td><a href="view/{{d.id}}">{{ d.id }}</a></td>
-        <td>{{ d.Year }}</td>
-        <td>{{ d.Score }}</td>
-        <td>{{ d.Title }}</td>
+        <td><a href="view/{{city.id}}">{{ city.fldName }}</a></td>
+        <td>{{ city.fldLat }}</td>
+        <td>{{ city.fldLong }}</td>
+        <td>{{ city.fldCountry }}</td>
+        <td>{{ city.fldAbbreviation }}</td>
+        <td>{{ city.fldCapitalStatus }}</td>
+        <td>{{ city.fldPopulation }}</td>
     </tr>
     {% endfor %}
     </tbody>

@@ -1,28 +1,28 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<h5 class="card-title" style="margin-top: 20px">No.{{ rating.id }}</h5>
+<h5 class="card-title" style="margin-top: 20px">No.{{ mileage.id }}</h5>
 
-<form action="/edit/{{rating.id}}" method="post">
+<form action="/edit/{{mileage.id}}" method="post">
 
   <div class="form-group row">
     <label for="year" class="col-sm-2 col-form-label">Year</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="year" name="Year" value="{{rating.Year}}">
+      <input type="text" class="form-control" id="year" name="Year" value="{{mileage.Year}}">
     </div>
   </div>
 
   <div class="form-group row">
-    <label for="Score" class="col-sm-2 col-form-label">Score</label>
+    <label for="Mileage" class="col-sm-2 col-form-label">Mileage</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="Score" name="Score" value="{{rating.Score}}">
+      <input type="text" class="form-control" id="Mileage" name="Mileage" value="{{mileage.Mileage}}">
     </div>
   </div>
 
   <div class="form-group row">
-    <label for="Title" class="col-sm-2 col-form-label">Title</label>
+    <label for="Price" class="col-sm-2 col-form-label">Price</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="Title" name="Title" value="{{rating.Title}}">
+      <input type="text" class="form-control" id="Price" name="Price" value="{{mileage.Price}}">
     </div>
   </div>
 
