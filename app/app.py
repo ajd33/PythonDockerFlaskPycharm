@@ -26,7 +26,7 @@ class MyDb:
         cursor.execute('SELECT * FROM escort')
         return cursor.fetchall()
 
-    def get_mileage(self, mileage_id)_:
+    def get_mileage(self, mileage_id):
         cursor = self.connection.cursor(dictionary=True)
         cursor.execute('SELECT * FROM escort WHERE id=%s', (mileage_id,))
         result = cursor.fetchall()
