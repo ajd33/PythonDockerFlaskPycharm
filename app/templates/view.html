@@ -1,17 +1,17 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<h5 class="card-title" style="margin-top: 20px">No.{{ rating.id }} - {{ rating.Title }}</h5>
+<h5 class="card-title" style="margin-top: 20px">No.{{ mileage.id }} - {{ mileage.Price }}</h5>
 
 <div class="card" class="m-5 p-2">
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">Year: {{ rating.Year }}</li>
-        <li class="list-group-item">Score: {{ rating.Score }}</li>
-        <li class="list-group-item">Title: {{ rating.Title }}</li>
+        <li class="list-group-item">Year: {{ mileage.Year }}</li>
+        <li class="list-group-item">Mileage: {{ mileage.Mileage }}</li>
+        <li class="list-group-item">Price: {{ mileage.Price }}</li>
     </ul>
     <div class="card-body">
-        <form action="/delete/{{rating.id}}" method="post">
-            <a href="/edit/{{rating.id}}" class="card-link btn btn-primary">Edit</a>
+        <form action="/delete/{{mileage.id}}" method="post">
+            <a href="/edit/{{mileage.id}}" class="card-link btn btn-primary">Edit</a>
             <button type="submit" class="btn btn-danger">Delete</button>
         </form>
     </div>
@@ -20,3 +20,4 @@
 
 
 {% endblock %}
+
