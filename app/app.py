@@ -66,7 +66,7 @@ def record_view(mileage_id):
 
 
 @app.route('/edit/<int:mileage_id>', methods=['GET'])
-def form_edit_get(mileage)_id):
+def form_edit_get(mileage_id):
     mileage = db.get_mileage(mileage_id)
     return render_template('edit.html', Price='Edit Form', user=user, mileage=mileage)
 
@@ -135,3 +135,4 @@ def api_delete(mileage_id) -> str:
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True) # set debug=False on deployment
+
