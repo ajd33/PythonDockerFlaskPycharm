@@ -13,7 +13,7 @@ class MyDb:
             'user': 'root',
             'password': 'root',
             'host': 'db',
-            'port': '3306',
+            'port': '32000',
             'database': 'fordEscort'
         }
         self.connection = mysql.connector.connect(**config)
@@ -66,7 +66,7 @@ def record_view(mileage_id):
 
 
 @app.route('/edit/<int:mileage_id>', methods=['GET'])
-def form_edit_get(mileage)_id):
+def form_edit_get(mileage_id):
     mileage = db.get_mileage(mileage_id)
     return render_template('edit.html', Price='Edit Form', user=user, mileage=mileage)
 

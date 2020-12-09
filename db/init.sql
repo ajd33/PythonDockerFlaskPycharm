@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS escort (
     `id` INT NOT NULL AUTO_INCREMENT,
     `Year` INT,
     `Mileage` INT,
-    `Price $` VARCHAR(42) CHARACTER SET utf8,
+    `Price` INT,
     `Column_4` VARCHAR(10) CHARACTER SET utf8,
     PRIMARY KEY (id)
 );
