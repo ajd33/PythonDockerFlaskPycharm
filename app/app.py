@@ -13,7 +13,7 @@ class MyDb:
             'user': 'root',
             'password': 'root',
             'host': 'db',
-            'port': '32000',
+            'port': '3306',
             'database': 'fordEscort'
         }
         self.connection = mysql.connector.connect(**config)
