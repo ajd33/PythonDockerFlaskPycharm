@@ -24,7 +24,7 @@
 
 ![updaterecord2HW3](./screenshots/updaterecord2HW3.png)
 
-![updaterecord3HW3t](./screenshots/updaterecord3HW3.png)
+![updaterecord3HW3t](./screenshots/updaterecord3.png)
 
 <p>2f. Deleted Record.</p>
 
