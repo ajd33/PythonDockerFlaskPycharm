@@ -1,7 +1,7 @@
 <h1>Homework 3</h1>
 <p>This is a homework assignment demonstrating a data table being viewed in a web browser, showing just one record, adding a new record and deleteing a record. </p>
 <p>2a. My Data Table viewed in Pycharm</p>
-![Homepage displaying my data](screenshots/MyDataViewinPycharmHW3.png)
+[Homepage displaying my data](screenshots/MyDataViewinPycharmHW3.png)
 <p>2b. Homepage displaying my data.</p>
 ![postman request output](screenshots/HomepageWithMyDataHW3.png)
 <p>2c. Single record view.</p>
