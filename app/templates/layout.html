@@ -8,7 +8,7 @@
 {% if user %}
     <title>Welcome to {{ user.username }}'s site</title>
     {% else %}
-    <title>Welcome to My Site!</title>
+    <title>Welcome to the Ford Escort Sales Site</title>
     {% endif %}
 <head>
  <body>
@@ -17,7 +17,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="/">{% if user %}{{ user.username }}'s Homepage{% else %}
-    <title>Welcome to My Homepage</title>
+    <title>Ford Escort Sales Homepage</title>
     {% endif %}</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -28,10 +28,10 @@
         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/mileage/new">Mileage New <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/mileage/new">Enter New Sale <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/api/mileages">Mileage API JSON endpoint <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/api/mileages">Sales API JSON endpoint <span class="sr-only">(current)</span></a>
       </li>
 
     </ul>
