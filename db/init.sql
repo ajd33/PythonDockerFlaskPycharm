@@ -32,4 +32,5 @@ INSERT INTO escort (`Year`,`Mileage`,`Price`,`Column_4`) VALUES
     (1995,72000,5994,NULL),
     (1993,72000,5994,NULL),
     (1994,61000,5500,NULL),
-    (1998,7000,11000,NULL);
+    (1998,7000,11000,NULL)
+    (2021,1,25000);
